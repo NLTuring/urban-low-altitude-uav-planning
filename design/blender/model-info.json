@@ -1,0 +1,21 @@
+{
+  "site_dimensions_m": [
+    600,
+    420
+  ],
+  "building_groups": 10,
+  "trees": 114,
+  "base_objects": 136,
+  "source_vertices": 50605,
+  "unique_meshes": 25,
+  "glb_bytes": 3439212,
+  "status": "Concept model; sample airspace has not been validated for flight.",
+  "export_detail": "Structural geometry retained; small bevel modifiers omitted from web export.",
+  "render_device": "CPU Cycles, denoised, 32 samples",
+  "render_status": "Both overview and detail complete",
+  "original_scene_object_count": 265,
+  "saved_scene_names": [
+    "AIRORDER — 示范园区"
+  ],
+  "saved_object_count": 148
+}

@@ -1,0 +1,44 @@
+# Dependencies and frontend build/test output
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+
+# Local configuration, credentials, and runtime files
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+*.pid
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Regenerable document previews; keep source and root deliverables
+/_build/pdf/
+/_build/png/
+/_build/png_bp/
+
+# Blender backups and local launch status; keep .blend source assets
+*.blend[0-9]*
+/design/blender/opened-project.json
+/design/blender/project-launch.json
+/design/blender/build-status.txt
+
+# Operating system and editor temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+~$*
+*.swp
+*.swo
