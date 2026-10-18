@@ -1,14 +1,29 @@
-# 空序 AIRORDER
+# 空序 AIRORDER · 城市低空多机协同调度与航路规划决策平台
 
-城市低空多机协同调度与航路规划决策平台，包含浏览器交互原型、园区三维模型、界面设计及项目文档。
+![React](https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript-61DAFB?logo=react&logoColor=black)
+![Three.js](https://img.shields.io/badge/3D%20GIS-Three.js%20%2B%20Blender%20GLB-000000?logo=threedotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Build-Vite%207-646CFF?logo=vite&logoColor=white)
 
-当前原型演示“发现冲突 → 比较方案 → 协调确认 → 外部落实回执 → 运行观测 → 审计记录”的业务流程，使用预设航迹与样例数据。真实运行数据、运营人接口、优化算法、审批流程、账户权限和语言模型尚未接入。
+面向城市低空物流与巡检场景的**多无人机（UAV）协同调度、四维航迹冲突检测与三维态势可视化平台**。
 
 ![空序运行总览](prototype/artifacts/airorder-overview.png)
 
+---
+
+## 核心特性
+
+- **全链路冲突消解工作流**
+  - 完整实现**“时空冲突检测 → 候选解脱方案比对 → 多方协调确认 → 外部执行回执 → 实时运行态势观测 → 全流程审计存证”**的闭环调度逻辑。
+- **三维城市园区态势感知**
+  - 基于 Three.js 与 Blender 自建城市园区 GLB 模型，实时渲染低空空域网格、建筑物安全包络、多机四维航迹线及冲突预警热区。
+- **多指标方案权衡对比**
+  - 针对高度层调配、航路绕飞、时隙延误等不同消解策略，直观对比延误时长、额外能耗、安全裕度与空域容量影响。
+
+---
+
 ## 快速启动
 
-安装支持 Vite 7 的 Node.js 版本（20.19+ 或 22.12+），然后在项目根目录运行：
+环境要求：Node.js 20.19+ 或 22.12+。
 
 ```bash
 cd prototype
@@ -16,38 +31,27 @@ npm ci
 npm run dev
 ```
 
-浏览器访问 <http://127.0.0.1:4173>。开发服务仅监听本机。
+浏览器访问 `http://127.0.0.1:4173`（Windows 用户也可在构建后直接运行 `prototype/启动原型.cmd`）。
 
-构建并预览生产版本：
+### 构建与预览
 
 ```bash
+cd prototype
 npm run build
 npm run preview
 ```
 
-Windows 用户也可在安装依赖并完成构建后双击 `prototype/启动原型.cmd`，由脚本启动本地预览。详细体验步骤见 [原型说明](prototype/README.md)。
+详细交互体验步骤参见 [prototype/README.md](prototype/README.md)。
 
-## 项目内容
+---
 
-| 路径 | 内容 |
-| --- | --- |
-| [prototype/](prototype/) | React、TypeScript、Vite、Three.js 交互原型及测试 |
-| [design/](design/) | UI 与功能设计方案、概念草图和园区渲染图 |
-| [design/blender/](design/blender/README.md) | Blender 原始工程、建模脚本与模型说明 |
-| [design/models/](design/models/) | 园区 GLB 模型 |
-| [_build/](./_build/README.md) | 项目文档生成与校验脚本 |
-| 根目录 `.docx` / `.pdf` | 商业计划书样板、项目简介与 BP/PPT 编制指南 |
+## 目录结构
 
-## 验证
-
-在 `prototype` 目录运行：
-
-```bash
-npm run build
-npm run test:coverage
-npm run test:e2e
+```text
+urban-low-altitude-uav-planning/
+├── prototype/          # React + TypeScript + Three.js 低空调度交互原型及测试
+├── design/
+│   ├── blender/        # Blender 园区原始建模工程与自动化生成脚本
+│   └── models/         # 导出的园区三维 GLB 模型资产
+└── _build/             # 工程文档构建脚本
 ```
-
-浏览器测试默认使用本机 Google Chrome。文档重新生成步骤和工具要求见 [文档生成说明](./_build/README.md)。
-
-依赖目录、构建缓存、测试报告、运行日志和文档逐页预览未纳入版本控制；应用源码、依赖锁文件、模型、设计素材及根目录文档均保留。
